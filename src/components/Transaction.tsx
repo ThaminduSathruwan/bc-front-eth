@@ -61,7 +61,7 @@ const Transaction: React.FC<TransactionProps> = ({ transaction, addTransactionTo
         }
 
         // Move transactions every 50ms
-        const intervalId = setInterval(moveTransaction, 10);
+        const intervalId = setInterval(moveTransaction, 20);
 
         return () => {
             clearInterval(intervalId);
