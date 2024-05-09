@@ -72,7 +72,7 @@ const Replay: React.FC<ReplayProps> = ({setLoading, txnTypes, replayType}) => {
 
                 const endOfWindow = new Date(currentStartTime);
                 endOfWindow.setSeconds(endOfWindow.getSeconds() + 5);
-                await fetchStreamData(currentStartTime.toISOString().replace("T", " ").replace("Z", ""), endOfWindow.toISOString().replace("T", " ").replace("Z", ""));
+                await fetchStreamData(currentStartTime.toISOString().replace("T", " ").replace("Z", "").slice(0, -4), endOfWindow.toISOString().replace("T", " ").replace("Z", "").slice(0, -4));
                 currentStartTime = endOfWindow;
             }, 1000);
 
